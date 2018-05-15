@@ -27,24 +27,18 @@ function createBio (body) {
   console.log(name, url, company, website)
   var header = document.querySelector('.banner')
   header.innerHTML = `<h1 class="name">${name}</h1>`
-  var body = document.querySelector('.content')
-  body.innerHTML =
-  `<div class="bio">
-  <h2 class="bio__headings">The Basics</h2>
-  <div class="bio__info"><em>Name</em> ${name}</div>
+  var basic = document.querySelector('.bio__content')
+  basic.innerHTML = `<div class="bio__info"><em>Name</em> ${name}</div>
   <div class="bio__info"><em>Github Url</em> <a href="${url}">${githubname}</a></div>
   <div class="bio__info"><em>Company</em> ${company}</div>
-  <div class="bio__info"><em>Website</em> <a href="${website}">${website}</a></div>
-  </div>
-  <div class="bio">
-    <h2 class="bio__headings">The Story</h2>
-    <div class="bio__intro">
-      ${bio}
-    </div>
-  </div>
-  <div class="bio__photo">
-  <img class="photo" src="${photo}">
-  </div>`
+  <div class="bio__info"><em>Website</em> <a href="${website}">${website}</a></div>`
+  var intro = document.querySelector('.bio__intro')
+  intro.innerHTML = `${bio}`
+  var picture = document.querySelector('.bio__photo')
+  picture.innerHTML = `
+    <div class="bio__photo">
+    <img class="photo" src="${photo}">
+    </div>`
 }
 
 document.addEventListener('DOMContentLoaded', onLoad)
