@@ -7,11 +7,13 @@ function onLoad () {
 }
 
 function getData (query) {
-  request.get(`https://api.github.com/users/${query}`)
-    .then(function (result) {
-      console.log('result', result.body)
-      createBio(result.body)
-    })
+  try {
+    request.get(`https://api.github.com/users/${query}`)
+      .then(function (result) {
+        console.log('result', result)
+        createBio(result.body)
+      })
+  } catch (err) { window.alert('Error message: ' + err) }
 }
 
 function createBio (body) {
@@ -20,11 +22,9 @@ function createBio (body) {
   var company = body.company
   var website = body.blog
   var githubname = body.login
-  // var website = body.html_url
   var photo = body.avatar_url
   var bio = body.bio
 
-  console.log(name, url, company, website)
   var header = document.querySelector('.banner')
   header.innerHTML = `<h1 class="name">${name}</h1>`
   var basic = document.querySelector('.bio__content')
