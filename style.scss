@@ -1,0 +1,138 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  font-size: 20px;
+}
+
+.box1 {
+  width: 100%;
+  height: 10rem;
+  background: #2FA88E;
+  position: relative;
+  display: flex;
+  z-index: 0;
+  // justify-content: center;
+}
+
+.box2 {
+  display:flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: .2rem 0px;
+  position: relative;
+  justify-content: center;
+  &:before{
+    content: '';
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: -45px;
+    left: 0;
+    background: whitesmoke;
+    transform: skewY(6deg);
+    z-index: 2;
+  }
+  &:after{
+    content: '';
+    width: 50%;
+    height: 100px;
+    position: absolute;
+    top: -45px;
+    right: 0;
+    background: whitesmoke;
+    transform: skewY(-6deg);
+    z-index: 2;
+  }
+}
+.name{
+  font-size: 4rem;
+  margin: 1rem auto
+}
+.bio{
+  z-index: 5;
+  margin: 0 .5rem;
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-basis: 25%;
+  // border: black solid 2px;
+  &__headings{
+    font-size: 2.5rem;
+    padding: 0 1rem;
+    margin: 1rem 0;
+  }
+  &__info {
+    padding: 0 1rem;
+  }
+  &__intro{
+    // text-indent: .5rem;
+    padding: 0 1rem;
+    border-left: grey solid .5px;
+    color: grey;
+  }
+  &__photo{
+    flex-basis: 10%;
+    align-self:flex-end;
+    z-index: 6;
+  }
+}
+a {
+  text-decoration: underline;
+  color:black;
+  &:hover{
+    color: orange;
+  }
+}
+em {
+  color:#2FA88E;
+  font-style: normal;
+}
+.photo{
+  display:flex;
+  width: 100%;
+  // height: 15%;
+  padding: .5rem;
+  border-radius: 50%;
+}
+
+@media only screen and (max-width: 900px) {
+  body {
+    width: 100%;
+    font-size: 18px;
+  }
+  .box2 {
+    flex-direction: row;
+    flex-wrap: wrap;
+    // width: 80%;
+    margin: 0 auto;
+  }
+  .bio{
+    flex-wrap: wrap;
+    order: 1;
+    flex-basis: 70%;
+    &__photo{
+      flex-basis: 40%;
+      order:0;
+    }
+  }
+  
+}
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 15px;
+  }
+  .box1 {
+    height:7rem;
+  }
+  .name{
+    font-size: 2rem;
+  }
+  .bio{
+    flex-basis: 100%;
+    &__headings{
+    font-size: 1.5rem;
+    }
+  }
+}
