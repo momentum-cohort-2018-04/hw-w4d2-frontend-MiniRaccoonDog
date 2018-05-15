@@ -25,9 +25,9 @@ function createBio (body) {
   var bio = body.bio
 
   console.log(name, url, company, website)
-  var header = document.querySelector('.box1')
+  var header = document.querySelector('.banner')
   header.innerHTML = `<h1 class="name">${name}</h1>`
-  var body = document.querySelector('.box2')
+  var body = document.querySelector('.content')
   body.innerHTML =
   `<div class="bio">
   <h2 class="bio__headings">The Basics</h2>
@@ -46,12 +46,5 @@ function createBio (body) {
   <img class="photo" src="${photo}">
   </div>`
 }
-
-/* <section class="box1">
-<h1 class="name">Asdasd</h1>
-</section>
-<section class="box2">
-
-</section> */
 
 document.addEventListener('DOMContentLoaded', onLoad)
