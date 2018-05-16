@@ -4,8 +4,9 @@ body {
   margin: 0 auto;
   background-color: whitesmoke;
   font-size: 20px;
+  box-sizing: border-box;
+  font-family:'Roboto', sans-serif;
 }
-
 .banner {
   width: 100%;
   height: 10rem;
@@ -13,11 +14,32 @@ body {
   position: relative;
   display: flex;
   z-index: 0;
-  // justify-content: center;
 }
-
+input[type=text] {
+  border: 2px solid rgb(41, 151, 127);
+  border-radius: 4px;
+  height:3rem;
+  width: 40%;
+  margin: 2rem auto;
+  font-size:1.75rem;
+  color:grey;
+  background: rgb(61, 199, 169);
+}
+.finder{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width:100%;
+  color:whitesmoke;
+  h1{
+    font-variant: small-caps;
+    font-size:2.5rem;
+    letter-spacing: .2rem;
+  }
+}
 .content {
-  display:flex;
+  display:none;
+  // display:flex;
   flex-wrap: wrap;
   width: 100%;
   padding: .2rem 0px;
@@ -57,7 +79,6 @@ body {
   flex-direction: column;
   flex-wrap: wrap;
   flex-basis: 25%;
-  // border: black solid 2px;
   &__headings{
     font-size: 2.5rem;
     padding: 0 1rem;
@@ -67,7 +88,6 @@ body {
     padding: 0 1rem;
   }
   &__intro{
-    // text-indent: .5rem;
     padding: 0 1rem;
     border-left: grey solid .5px;
     color: grey;
@@ -92,7 +112,6 @@ em {
 .photo{
   display:flex;
   width: 100%;
-  // height: 15%;
   padding: .5rem;
   border-radius: 50%;
 }
@@ -102,10 +121,12 @@ em {
     width: 100%;
     font-size: 18px;
   }
+  input[type=text] {
+    width: 80%;
+  }
   .content {
     flex-direction: row;
     flex-wrap: wrap;
-    // width: 80%;
     margin: 0 auto;
   }
   .bio{

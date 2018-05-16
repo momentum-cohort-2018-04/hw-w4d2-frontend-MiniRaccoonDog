@@ -1,6 +1,14 @@
 import request from 'superagent'
-
-console.log('script.js loaded')
+function onLoad () {
+// function onLoad (input) {
+  console.log('Loaded!')
+  const query = 'miniraccoondog'
+  // const query = input.toLowerCase()
+  getData(query)
+}
+// function alert (query) {
+//   window.alert(query)
+// }
 
 function getData (query) {
   try {
@@ -11,6 +19,7 @@ function getData (query) {
       })
   } catch (err) { window.alert('Error message: ' + err) }
 }
+
 function createBio (body) {
   var name = body.name
   var url = body.html_url
@@ -35,10 +44,5 @@ function createBio (body) {
     <img class="photo" src="${photo}">
     </div>`
 }
-document.addEventListener('DOMContentLoaded', function () {
-  document.getElementById('input').addEventListener('submit', function () {
-    event.preventDefault()
-    var x = document.querySelector('input').value.replace(/\s/g, '').toLowerCase()
-    getData(x)
-  })
-})
+
+// document.addEventListener('DOMContentLoaded', onLoad)
