@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bio Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="./style.scss" />
+    <script src="./script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  </head>
+  <script>
+  $(document).ready(() => {
+    $('#input').submit(function(){
+      event.preventDefault()
+      $('.content').css("display", "flex")
+      $('.finder').css("display", "none")
+    })
+  })
+  </script>
+  <body>
+    <section class="banner">
+        
+        <form class="finder" id="input">
+            <h1 class="finder">Github Lookup</h1>
+            <input class="finder" type="text" placeholder="Enter Username" onsubmit=getData()>
+        </form>
+    </section>
+    <section class="content">
+      <div class="bio">
+        <h2 class="bio__headings">The Basics</h2>
+        <div class="bio__content"></div>
+      </div>
+      <div class="bio">
+        <h2 class="bio__headings">The Story</h2>
+        <div class="bio__intro"></div>
+      </div>
+      <div class="bio__photo"></div>
+    </section>
+  </body>
+</html>
